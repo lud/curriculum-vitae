@@ -6,5 +6,4 @@ webSite: https://ludovic.demblans.com
 linkedIn: ludovic-demblans-99127aa3
 ---
 
-Je suis spécialisé dans la cartographie interactive puis dans le développement
-d'applications ...
+Lorem ipsum dolor sit amet c'est trop compliqué mon expertise ...

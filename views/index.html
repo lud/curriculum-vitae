@@ -10,8 +10,13 @@
         <h1 class="title is-1">
           {{ content.main.pageTitle }}
         </h1>
-        {% include 'partials/experience.html' %}
-        {% include 'partials/formation.html' %}
+
+        <section class="section">
+          {% include 'partials/experience.html' %}
+        </section>
+        <section class="section">
+          {% include 'partials/formation.html' %}
+        </section>
       </div>
       {# Sidebar #}
       <aside class="column is-one-third sidebar">

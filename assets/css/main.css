@@ -6735,7 +6735,7 @@ label.panel-block {
   padding: 3rem 1.5rem; }
 
 .section {
-  padding: 3rem 1.5rem; }
+  padding: 3rem 0; }
   @media screen and (min-width: 1088px) {
     .section.is-medium {
       padding: 9rem 1.5rem; }
@@ -6745,6 +6745,9 @@ label.panel-block {
 .footer {
   background-color: #fafafa;
   padding: 3rem 1.5rem 6rem; }
+
+body {
+  padding-top: 0rem; }
 
 /* This was made before using sass ... */
 @media screen and (min-width: 1472px) {
@@ -6781,8 +6784,9 @@ h4 svg.svg-inline--fa {
 
 .content .data-formation-title,
 .content .data-job-title,
-.content .sidebar h4 {
+.content .sidebar h3 {
   color: #ab4444;
+  /*red*/
   text-transform: uppercase; }
 
 .content .sidebar h4 svg {

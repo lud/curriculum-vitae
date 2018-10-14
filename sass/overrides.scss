@@ -1,3 +1,6 @@
+body {
+    padding-top: 0rem;
+}
 
 /* This was made before using sass ... */
 
@@ -44,8 +47,8 @@ h4 svg.svg-inline--fa {
 
 .content .data-formation-title,
 .content .data-job-title ,
-.content .sidebar h4 {
-    color: #ab4444;
+.content .sidebar h3 {
+    color: #ab4444;/*red*/
     text-transform: uppercase;
 }
 .content .sidebar h4 svg {
