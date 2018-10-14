@@ -87,6 +87,7 @@ class DocumentTwigOutput {
 // Main data
 $content->add('main', content('main.md'));
 $content->add('human', content('human.md'));
+$content->add('skills', content('skills.md'));
 // Work XP
 $content->add('gfi', content('experiences/gfi.md'), 'xp');
 $content->add('toulouseweb', content('experiences/toulouseweb.md'), 'xp');
@@ -100,6 +101,15 @@ $twigLoader = new \Twig_Loader_Filesystem(TEMPLATES_PATH);
 $twig = new \Twig_Environment($twigLoader, [
     'OFF_cache' => TEMPLATES_CACHE_PATH,
 ]);
+$twig->addFilter(new Twig_filter('strip_protocol', function (string $url) {
+    if (0 === strpos($url, 'https://')) {
+        return substr($url, 8);
+    }
+    if (0 === strpos($url, 'http://')) {
+        return substr($url, 7);
+    }
+    return $url;
+}));
 $template = $twig->load('index.html');
 
 

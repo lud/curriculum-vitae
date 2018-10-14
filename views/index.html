@@ -2,22 +2,26 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ content.main.title }}</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
-<!-- <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script> -->
-<div class="container content">
-  <div class="columns">
-    {# Main Container #}
-    <div class="column">
-      <h1 class="title">
-        {{ content.main.pageTitle }}
-      </h1>
+<div class="section">
+  <div class="main-container container content">
+    <div class="columns">
+      {# Main Container #}
+      <div class="column">
+        <h1 class="title is-1">
+          {{ content.main.pageTitle }}
+        </h1>
 
-      {% include 'partials/experiences.html' %}
-      {% include 'partials/formation.html' %}
-    </div>
-    {# Sidebar #}
-    <div class="column is-one-quarter">
-      {% include 'partials/human.html' %}
+        {% include 'partials/experiences.html' %}
+        {% include 'partials/formation.html' %}
+      </div>
+      {# Sidebar #}
+      <div class="column is-one-quarter">
+        {% include 'partials/human.html' %}
+      </div>
     </div>
   </div>
 </div>
+
+<link rel="stylesheet" href="node_modules/bulma/css/bulma.min.css" />
+<link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.css" />
+<link rel="stylesheet" href="assets/css/main.css" />
