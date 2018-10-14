@@ -10,18 +10,17 @@
         <h1 class="title is-1">
           {{ content.main.pageTitle }}
         </h1>
-
-        {% include 'partials/experiences.html' %}
+        {% include 'partials/experience.html' %}
         {% include 'partials/formation.html' %}
       </div>
       {# Sidebar #}
-      <div class="column is-one-quarter">
+      <aside class="column is-one-third sidebar">
         {% include 'partials/human.html' %}
-      </div>
+        {% include 'partials/skills.html' %}
+      </aside>
     </div>
   </div>
 </div>
 
-<link rel="stylesheet" href="node_modules/bulma/css/bulma.min.css" />
-<link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.css" />
 <link rel="stylesheet" href="assets/css/main.css" />
+<script type="text/javascript" src="node_modules/@fortawesome/fontawesome-free/js/all.js"></script>

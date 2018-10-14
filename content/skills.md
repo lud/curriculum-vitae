@@ -1,15 +1,30 @@
 
-#### Bases de données / SIG
+#### <i class="fas fa-database"></i> Bases de données
 
-- PostgreSQL, Oracle, MySQL, SQLite
-- Mapinfo, ArcGIS Server, Arcgis JsAPI
+- PostgreSQL, PostGis
+- Oracle, Oracle Spatial
+- MySQL, SQLite
 
-#### Langages, Frameworks
+#### <i class="fas fa-layer-group"></i> SIG
 
-- Javascript, ES6, React/Redux, Vue/VueX, Svelte
-- PHP 5/7, Laravel, Slim, Symfony
+- ArcGIS Server, Arcgis JsAPI
+- MapGuide, MapGuide OS
+- Mapinfo, QGis
+
+#### <i class="fas fa-code"></i> Programmation
+
+- Javascript, ES6, React/Redux, Vue/VueX, Cordova, Svelte
+- OpenLayers, Leaflet, Mapbox
+- PHP 5/7, Laravel, Symfony, Wordpress
 - Erlang/Elixir/OTP, Phoenix, Ecto, Mnesia
 
-#### Langues
+#### <i class="fas fa-cubes"></i> Environnements
+
+- Linux, Windows
+- Apache, Nginx, Cowboy
+- Git, SVN
+- Jira
+
+#### <i class="fas fa-comments"></i> Langues
 
 - Anglais _fluent_

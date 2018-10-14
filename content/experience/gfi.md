@@ -1,6 +1,6 @@
 ---
 employer: Gfi Informatique
-jobType: Développeur
+jobType: Développeur Full Stack
 dateRange: 2013 – 2017
 ---
 

@@ -4,16 +4,20 @@
     {{ content.human.body }}
 </div>
 
-<h3>Me contacter</h3>
+<br/>
 
-<ul>
+<ul class="contacts">
     <li>
         <i class="fas fa-mobile-alt"></i>
-        {{ content.human.phoneNumber }}
+        <span>
+            {{ content.human.phoneNumber }}
+        </span>
     </li>
     <li>
         <i class="fas fa-envelope"></i>
-        {{ content.human.emailAddress }}
+        <span>
+            {{ content.human.emailAddress }}
+        </span>
     </li>
     {#
     <li>
@@ -23,14 +27,12 @@
         </a>
     </li>
     #}
-    <li class="no-print">
+    <li class="no-print is-link">
         <a href="https://www.linkedin.com/in/{{ content.human.linkedIn }}">
             <i class="fab fa-linkedin"></i>
-            LinkedIn
+            <span>LinkedIn</span>
         </a>
     </li>
 </ul>
 
-<h3>Compétences</h3>
 
-{{ content.skills.body }}

@@ -1,7 +1,0 @@
-<h2>Expérience Professionelle</h2>
-{% for xp in content.tagged('xp') %}
-    <h3>{{ xp.jobType }}</h3>
-    <h4 class="subtitle">{{ xp.employer }}</h4>
-    {{ xp.dateRange }}
-    {{ xp.body }}
-{% endfor %}

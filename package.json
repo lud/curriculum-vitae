@@ -2,5 +2,12 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.4.1",
     "bulma": "^0.7.2"
+  },
+  "devDdependencies": {
+    "node-sass": "^4.9.3"
+  },
+  "scripts": {
+    "build": "node-sass --omit-source-map-url sass/main.scss assets/css/main.css",
+    "dev": "node-sass --omit-source-map-url sass/main.scss assets/css/main.css --watch"
   }
 }
