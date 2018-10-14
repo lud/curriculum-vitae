@@ -1,8 +1,8 @@
 ---
 displayName: Ludovic Demblans
+phoneNumber: +336 18 33 18 36
+emailAddress: ludovic@demblans.com
+webSite: ludovic.demblans.com
 ---
 
-
-Passionné de programmation, développeurPHP/Javascript depuis plus de 2 ans, je
-cherche à me spécialiser dans le développement d'applications web riches et
-dynamiques.
+... @todo

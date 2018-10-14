@@ -84,11 +84,17 @@ class DocumentTwigOutput {
 
 }
 
+// Main data
 $content->add('main', content('main.md'));
 $content->add('human', content('human.md'));
+// Work XP
 $content->add('gfi', content('experiences/gfi.md'), 'xp');
 $content->add('toulouseweb', content('experiences/toulouseweb.md'), 'xp');
 $content->add('arles', content('experiences/arles.md'), 'xp');
+// School
+$content->add('lpro', content('formation/lpro.md'), 'school');
+$content->add('ut2', content('formation/ut2.md'), 'school');
+$content->add('lycee', content('formation/lycee.md'), 'school');
 
 $twigLoader = new \Twig_Loader_Filesystem(TEMPLATES_PATH);
 $twig = new \Twig_Environment($twigLoader, [

@@ -1,0 +1,7 @@
+<h2>Formation</h2>
+{% for school in content.tagged('school') %}
+    <h3>{{ school.title }}</h3>
+    <h4 class="subtitle">{{ school.schoolName }}</h4>
+    {{ school.dateRange }}
+    {{ school.body }}
+{% endfor %}
