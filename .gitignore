@@ -1,0 +1,4 @@
+/vendor
+/cache
+/node_modules
+serve.bat

@@ -1,0 +1,19 @@
+{
+    "name": "lud/cv",
+    "description": "My Curriculum Vitae",
+    "type": "project",
+    "require": {
+        "erusev/parsedown": "^1.7",
+        "erusev/parsedown-extra": "^0.7.1",
+        "spatie/yaml-front-matter": "^2.0",
+        "twig/twig": "^2.5"
+    },
+    "license": "Prop",
+    "authors": [
+        {
+            "name": "lud",
+            "email": "ludovic@demblans.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
