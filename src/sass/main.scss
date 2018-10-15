@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,400i,700,700i');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i');
 @charset "utf-8";
 
 
 $body-size: 16px;
-// $gap: 3px;
+$gap: 32px;
 $section-padding: 3rem 0;
 
 $theme-blue: #2B85B2;
@@ -23,8 +23,8 @@ $danger: $theme-light-red;
 
 
 
-$family-sans-serif: BlinkMacSystemFont, -apple-system, "Roboto Condensed", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$family-sans-serif: BlinkMacSystemFont, -apple-system, "Roboto", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 
 
-@import "../node_modules/bulma/bulma.sass";
+@import "../../node_modules/bulma/bulma.sass";
 @import "./overrides.scss";

@@ -4,8 +4,7 @@ jobType: Développeur Web
 dateRange: 2009 – 2012
 ---
 
-En tant que développeur j'ai participé à la création et à la maintenance
-d'applications web telles que :
+Prise en charge de toutes les créations et intégrations de sites internet.
 
 - Développement eCommerce: Prestashop (+ modification d'anciens
   OsCommerce/OsCSS).
@@ -13,6 +12,8 @@ d'applications web telles que :
 - Solutions emailing & advertising (génération de newsletters, mise en place de
   campagnes de publicité, ...)
 
-Dans une équipe restreinte, j'ai également été amené de nombreuses fois à
-participer à l'administration des différents serveurs (Apache, MySql, SMTP, FTP)
-sur Linux (CentOs & Debian)
+Maintenance du site publicitaire de l'agence (application historique).
+
+J'ai été amené de nombreuses fois à prendre en charge l'administration des
+différents serveurs (Apache, MySql, SMTP, FTP) sur Linux (CentOs & Debian), et
+ai assuré la maintenance de services internes (_bug tracker_, wiki, ...).

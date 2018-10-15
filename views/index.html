@@ -1,15 +1,17 @@
 <!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/assets/css/main.css" />
+
 <title>{{ content.main.title }}</title>
 <div class="section">
   <div class="main-container content">
     <div class="columns">
       {# Main Container #}
       <div class="column">
-        <h1 class="title is-1">
-          {{ content.main.pageTitle }}
-        </h1>
+        <div class="main-body">
+          {{ content.main.body }}
+        </div>
 
         <section class="section">
           {% include 'partials/experience.html' %}
@@ -27,5 +29,12 @@
   </div>
 </div>
 
-<link rel="stylesheet" href="assets/css/main.css" />
-<script type="text/javascript" src="node_modules/@fortawesome/fontawesome-free/js/all.js"></script>
+<script defer src="/node_modules/@fortawesome/fontawesome-free/js/all.min.js"></script>
+
+<footer style="display: none">
+  <h2>Versions du CV spécifiques à un métier</h2>
+  <nav>
+    <a href="{{ path_for('cv', {'topic': 'webdev'}) }}">Développeur Web Full Stack</a>
+    <a href="{{ path_for('cv', {'topic': 'sig'}) }}">Développeur SIG</a>
+  </nav>
+</footer>

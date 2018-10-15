@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:400,400i,700,700i");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i");
 /*! bulma.io v0.7.2 | MIT License | github.com/jgthms/bulma */
 @keyframes spinAround {
   from {
@@ -264,7 +264,7 @@ button,
 input,
 select,
 textarea {
-  font-family: BlinkMacSystemFont, -apple-system, "Roboto Condensed", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif; }
+  font-family: BlinkMacSystemFont, -apple-system, "Roboto", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif; }
 
 code,
 pre {
@@ -410,7 +410,7 @@ table th {
   .is-size-7-tablet {
     font-size: 0.75rem !important; } }
 
-@media screen and (max-width: 1087px) {
+@media screen and (max-width: 1023px) {
   .is-size-1-touch {
     font-size: 3rem !important; }
   .is-size-2-touch {
@@ -426,7 +426,7 @@ table th {
   .is-size-7-touch {
     font-size: 0.75rem !important; } }
 
-@media screen and (min-width: 1088px) {
+@media screen and (min-width: 1024px) {
   .is-size-1-desktop {
     font-size: 3rem !important; }
   .is-size-2-desktop {
@@ -442,7 +442,7 @@ table th {
   .is-size-7-desktop {
     font-size: 0.75rem !important; } }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1216px) {
   .is-size-1-widescreen {
     font-size: 3rem !important; }
   .is-size-2-widescreen {
@@ -458,7 +458,7 @@ table th {
   .is-size-7-widescreen {
     font-size: 0.75rem !important; } }
 
-@media screen and (min-width: 1472px) {
+@media screen and (min-width: 1408px) {
   .is-size-1-fullhd {
     font-size: 3rem !important; }
   .is-size-2-fullhd {
@@ -494,31 +494,31 @@ table th {
   .has-text-centered-tablet {
     text-align: center !important; } }
 
-@media screen and (min-width: 769px) and (max-width: 1087px) {
+@media screen and (min-width: 769px) and (max-width: 1023px) {
   .has-text-centered-tablet-only {
     text-align: center !important; } }
 
-@media screen and (max-width: 1087px) {
+@media screen and (max-width: 1023px) {
   .has-text-centered-touch {
     text-align: center !important; } }
 
-@media screen and (min-width: 1088px) {
+@media screen and (min-width: 1024px) {
   .has-text-centered-desktop {
     text-align: center !important; } }
 
-@media screen and (min-width: 1088px) and (max-width: 1279px) {
+@media screen and (min-width: 1024px) and (max-width: 1215px) {
   .has-text-centered-desktop-only {
     text-align: center !important; } }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1216px) {
   .has-text-centered-widescreen {
     text-align: center !important; } }
 
-@media screen and (min-width: 1280px) and (max-width: 1471px) {
+@media screen and (min-width: 1216px) and (max-width: 1407px) {
   .has-text-centered-widescreen-only {
     text-align: center !important; } }
 
-@media screen and (min-width: 1472px) {
+@media screen and (min-width: 1408px) {
   .has-text-centered-fullhd {
     text-align: center !important; } }
 
@@ -530,31 +530,31 @@ table th {
   .has-text-justified-tablet {
     text-align: justify !important; } }
 
-@media screen and (min-width: 769px) and (max-width: 1087px) {
+@media screen and (min-width: 769px) and (max-width: 1023px) {
   .has-text-justified-tablet-only {
     text-align: justify !important; } }
 
-@media screen and (max-width: 1087px) {
+@media screen and (max-width: 1023px) {
   .has-text-justified-touch {
     text-align: justify !important; } }
 
-@media screen and (min-width: 1088px) {
+@media screen and (min-width: 1024px) {
   .has-text-justified-desktop {
     text-align: justify !important; } }
 
-@media screen and (min-width: 1088px) and (max-width: 1279px) {
+@media screen and (min-width: 1024px) and (max-width: 1215px) {
   .has-text-justified-desktop-only {
     text-align: justify !important; } }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1216px) {
   .has-text-justified-widescreen {
     text-align: justify !important; } }
 
-@media screen and (min-width: 1280px) and (max-width: 1471px) {
+@media screen and (min-width: 1216px) and (max-width: 1407px) {
   .has-text-justified-widescreen-only {
     text-align: justify !important; } }
 
-@media screen and (min-width: 1472px) {
+@media screen and (min-width: 1408px) {
   .has-text-justified-fullhd {
     text-align: justify !important; } }
 
@@ -566,31 +566,31 @@ table th {
   .has-text-left-tablet {
     text-align: left !important; } }
 
-@media screen and (min-width: 769px) and (max-width: 1087px) {
+@media screen and (min-width: 769px) and (max-width: 1023px) {
   .has-text-left-tablet-only {
     text-align: left !important; } }
 
-@media screen and (max-width: 1087px) {
+@media screen and (max-width: 1023px) {
   .has-text-left-touch {
     text-align: left !important; } }
 
-@media screen and (min-width: 1088px) {
+@media screen and (min-width: 1024px) {
   .has-text-left-desktop {
     text-align: left !important; } }
 
-@media screen and (min-width: 1088px) and (max-width: 1279px) {
+@media screen and (min-width: 1024px) and (max-width: 1215px) {
   .has-text-left-desktop-only {
     text-align: left !important; } }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1216px) {
   .has-text-left-widescreen {
     text-align: left !important; } }
 
-@media screen and (min-width: 1280px) and (max-width: 1471px) {
+@media screen and (min-width: 1216px) and (max-width: 1407px) {
   .has-text-left-widescreen-only {
     text-align: left !important; } }
 
-@media screen and (min-width: 1472px) {
+@media screen and (min-width: 1408px) {
   .has-text-left-fullhd {
     text-align: left !important; } }
 
@@ -602,31 +602,31 @@ table th {
   .has-text-right-tablet {
     text-align: right !important; } }
 
-@media screen and (min-width: 769px) and (max-width: 1087px) {
+@media screen and (min-width: 769px) and (max-width: 1023px) {
   .has-text-right-tablet-only {
     text-align: right !important; } }
 
-@media screen and (max-width: 1087px) {
+@media screen and (max-width: 1023px) {
   .has-text-right-touch {
     text-align: right !important; } }
 
-@media screen and (min-width: 1088px) {
+@media screen and (min-width: 1024px) {
   .has-text-right-desktop {
     text-align: right !important; } }
 
-@media screen and (min-width: 1088px) and (max-width: 1279px) {
+@media screen and (min-width: 1024px) and (max-width: 1215px) {
   .has-text-right-desktop-only {
     text-align: right !important; } }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1216px) {
   .has-text-right-widescreen {
     text-align: right !important; } }
 
-@media screen and (min-width: 1280px) and (max-width: 1471px) {
+@media screen and (min-width: 1216px) and (max-width: 1407px) {
   .has-text-right-widescreen-only {
     text-align: right !important; } }
 
-@media screen and (min-width: 1472px) {
+@media screen and (min-width: 1408px) {
   .has-text-right-fullhd {
     text-align: right !important; } }
 
@@ -809,31 +809,31 @@ a.has-text-danger:hover, a.has-text-danger:focus {
   .is-block-tablet {
     display: block !important; } }
 
-@media screen and (min-width: 769px) and (max-width: 1087px) {
+@media screen and (min-width: 769px) and (max-width: 1023px) {
   .is-block-tablet-only {
     display: block !important; } }
 
-@media screen and (max-width: 1087px) {
+@media screen and (max-width: 1023px) {
   .is-block-touch {
     display: block !important; } }
 
-@media screen and (min-width: 1088px) {
+@media screen and (min-width: 1024px) {
   .is-block-desktop {
     display: block !important; } }
 
-@media screen and (min-width: 1088px) and (max-width: 1279px) {
+@media screen and (min-width: 1024px) and (max-width: 1215px) {
   .is-block-desktop-only {
     display: block !important; } }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1216px) {
   .is-block-widescreen {
     display: block !important; } }
 
-@media screen and (min-width: 1280px) and (max-width: 1471px) {
+@media screen and (min-width: 1216px) and (max-width: 1407px) {
   .is-block-widescreen-only {
     display: block !important; } }
 
-@media screen and (min-width: 1472px) {
+@media screen and (min-width: 1408px) {
   .is-block-fullhd {
     display: block !important; } }
 
@@ -848,31 +848,31 @@ a.has-text-danger:hover, a.has-text-danger:focus {
   .is-flex-tablet {
     display: flex !important; } }
 
-@media screen and (min-width: 769px) and (max-width: 1087px) {
+@media screen and (min-width: 769px) and (max-width: 1023px) {
   .is-flex-tablet-only {
     display: flex !important; } }
 
-@media screen and (max-width: 1087px) {
+@media screen and (max-width: 1023px) {
   .is-flex-touch {
     display: flex !important; } }
 
-@media screen and (min-width: 1088px) {
+@media screen and (min-width: 1024px) {
   .is-flex-desktop {
     display: flex !important; } }
 
-@media screen and (min-width: 1088px) and (max-width: 1279px) {
+@media screen and (min-width: 1024px) and (max-width: 1215px) {
   .is-flex-desktop-only {
     display: flex !important; } }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1216px) {
   .is-flex-widescreen {
     display: flex !important; } }
 
-@media screen and (min-width: 1280px) and (max-width: 1471px) {
+@media screen and (min-width: 1216px) and (max-width: 1407px) {
   .is-flex-widescreen-only {
     display: flex !important; } }
 
-@media screen and (min-width: 1472px) {
+@media screen and (min-width: 1408px) {
   .is-flex-fullhd {
     display: flex !important; } }
 
@@ -887,31 +887,31 @@ a.has-text-danger:hover, a.has-text-danger:focus {
   .is-inline-tablet {
     display: inline !important; } }
 
-@media screen and (min-width: 769px) and (max-width: 1087px) {
+@media screen and (min-width: 769px) and (max-width: 1023px) {
   .is-inline-tablet-only {
     display: inline !important; } }
 
-@media screen and (max-width: 1087px) {
+@media screen and (max-width: 1023px) {
   .is-inline-touch {
     display: inline !important; } }
 
-@media screen and (min-width: 1088px) {
+@media screen and (min-width: 1024px) {
   .is-inline-desktop {
     display: inline !important; } }
 
-@media screen and (min-width: 1088px) and (max-width: 1279px) {
+@media screen and (min-width: 1024px) and (max-width: 1215px) {
   .is-inline-desktop-only {
     display: inline !important; } }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1216px) {
   .is-inline-widescreen {
     display: inline !important; } }
 
-@media screen and (min-width: 1280px) and (max-width: 1471px) {
+@media screen and (min-width: 1216px) and (max-width: 1407px) {
   .is-inline-widescreen-only {
     display: inline !important; } }
 
-@media screen and (min-width: 1472px) {
+@media screen and (min-width: 1408px) {
   .is-inline-fullhd {
     display: inline !important; } }
 
@@ -926,31 +926,31 @@ a.has-text-danger:hover, a.has-text-danger:focus {
   .is-inline-block-tablet {
     display: inline-block !important; } }
 
-@media screen and (min-width: 769px) and (max-width: 1087px) {
+@media screen and (min-width: 769px) and (max-width: 1023px) {
   .is-inline-block-tablet-only {
     display: inline-block !important; } }
 
-@media screen and (max-width: 1087px) {
+@media screen and (max-width: 1023px) {
   .is-inline-block-touch {
     display: inline-block !important; } }
 
-@media screen and (min-width: 1088px) {
+@media screen and (min-width: 1024px) {
   .is-inline-block-desktop {
     display: inline-block !important; } }
 
-@media screen and (min-width: 1088px) and (max-width: 1279px) {
+@media screen and (min-width: 1024px) and (max-width: 1215px) {
   .is-inline-block-desktop-only {
     display: inline-block !important; } }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1216px) {
   .is-inline-block-widescreen {
     display: inline-block !important; } }
 
-@media screen and (min-width: 1280px) and (max-width: 1471px) {
+@media screen and (min-width: 1216px) and (max-width: 1407px) {
   .is-inline-block-widescreen-only {
     display: inline-block !important; } }
 
-@media screen and (min-width: 1472px) {
+@media screen and (min-width: 1408px) {
   .is-inline-block-fullhd {
     display: inline-block !important; } }
 
@@ -965,31 +965,31 @@ a.has-text-danger:hover, a.has-text-danger:focus {
   .is-inline-flex-tablet {
     display: inline-flex !important; } }
 
-@media screen and (min-width: 769px) and (max-width: 1087px) {
+@media screen and (min-width: 769px) and (max-width: 1023px) {
   .is-inline-flex-tablet-only {
     display: inline-flex !important; } }
 
-@media screen and (max-width: 1087px) {
+@media screen and (max-width: 1023px) {
   .is-inline-flex-touch {
     display: inline-flex !important; } }
 
-@media screen and (min-width: 1088px) {
+@media screen and (min-width: 1024px) {
   .is-inline-flex-desktop {
     display: inline-flex !important; } }
 
-@media screen and (min-width: 1088px) and (max-width: 1279px) {
+@media screen and (min-width: 1024px) and (max-width: 1215px) {
   .is-inline-flex-desktop-only {
     display: inline-flex !important; } }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1216px) {
   .is-inline-flex-widescreen {
     display: inline-flex !important; } }
 
-@media screen and (min-width: 1280px) and (max-width: 1471px) {
+@media screen and (min-width: 1216px) and (max-width: 1407px) {
   .is-inline-flex-widescreen-only {
     display: inline-flex !important; } }
 
-@media screen and (min-width: 1472px) {
+@media screen and (min-width: 1408px) {
   .is-inline-flex-fullhd {
     display: inline-flex !important; } }
 
@@ -1014,31 +1014,31 @@ a.has-text-danger:hover, a.has-text-danger:focus {
   .is-hidden-tablet {
     display: none !important; } }
 
-@media screen and (min-width: 769px) and (max-width: 1087px) {
+@media screen and (min-width: 769px) and (max-width: 1023px) {
   .is-hidden-tablet-only {
     display: none !important; } }
 
-@media screen and (max-width: 1087px) {
+@media screen and (max-width: 1023px) {
   .is-hidden-touch {
     display: none !important; } }
 
-@media screen and (min-width: 1088px) {
+@media screen and (min-width: 1024px) {
   .is-hidden-desktop {
     display: none !important; } }
 
-@media screen and (min-width: 1088px) and (max-width: 1279px) {
+@media screen and (min-width: 1024px) and (max-width: 1215px) {
   .is-hidden-desktop-only {
     display: none !important; } }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1216px) {
   .is-hidden-widescreen {
     display: none !important; } }
 
-@media screen and (min-width: 1280px) and (max-width: 1471px) {
+@media screen and (min-width: 1216px) and (max-width: 1407px) {
   .is-hidden-widescreen-only {
     display: none !important; } }
 
-@media screen and (min-width: 1472px) {
+@media screen and (min-width: 1408px) {
   .is-hidden-fullhd {
     display: none !important; } }
 
@@ -1053,31 +1053,31 @@ a.has-text-danger:hover, a.has-text-danger:focus {
   .is-invisible-tablet {
     visibility: hidden !important; } }
 
-@media screen and (min-width: 769px) and (max-width: 1087px) {
+@media screen and (min-width: 769px) and (max-width: 1023px) {
   .is-invisible-tablet-only {
     visibility: hidden !important; } }
 
-@media screen and (max-width: 1087px) {
+@media screen and (max-width: 1023px) {
   .is-invisible-touch {
     visibility: hidden !important; } }
 
-@media screen and (min-width: 1088px) {
+@media screen and (min-width: 1024px) {
   .is-invisible-desktop {
     visibility: hidden !important; } }
 
-@media screen and (min-width: 1088px) and (max-width: 1279px) {
+@media screen and (min-width: 1024px) and (max-width: 1215px) {
   .is-invisible-desktop-only {
     visibility: hidden !important; } }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1216px) {
   .is-invisible-widescreen {
     visibility: hidden !important; } }
 
-@media screen and (min-width: 1280px) and (max-width: 1471px) {
+@media screen and (min-width: 1216px) and (max-width: 1407px) {
   .is-invisible-widescreen-only {
     visibility: hidden !important; } }
 
-@media screen and (min-width: 1472px) {
+@media screen and (min-width: 1408px) {
   .is-invisible-fullhd {
     visibility: hidden !important; } }
 
@@ -1832,28 +1832,28 @@ a.box:active {
 .container {
   margin: 0 auto;
   position: relative; }
-  @media screen and (min-width: 1088px) {
+  @media screen and (min-width: 1024px) {
     .container {
       max-width: 960px;
       width: 960px; }
       .container.is-fluid {
-        margin-left: 64px;
-        margin-right: 64px;
+        margin-left: 32px;
+        margin-right: 32px;
         max-width: none;
         width: auto; } }
-  @media screen and (max-width: 1279px) {
+  @media screen and (max-width: 1215px) {
     .container.is-widescreen {
       max-width: 1152px;
       width: auto; } }
-  @media screen and (max-width: 1471px) {
+  @media screen and (max-width: 1407px) {
     .container.is-fullhd {
       max-width: 1344px;
       width: auto; } }
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1216px) {
     .container {
       max-width: 1152px;
       width: 1152px; } }
-  @media screen and (min-width: 1472px) {
+  @media screen and (min-width: 1408px) {
     .container {
       max-width: 1344px;
       width: 1344px; } }
@@ -3397,7 +3397,7 @@ a.tag:hover {
     margin-top: -0.75rem; }
   .title:not(.is-spaced) + .subtitle {
     margin-top: -1.25rem; }
-  .title.is-1 {
+  .title.is-1, .main-body h1 {
     font-size: 3rem; }
   .title.is-2 {
     font-size: 2.5rem; }
@@ -4049,7 +4049,7 @@ a.list-item {
       border-color: #0a0a0a; }
     .navbar.is-white .navbar-burger {
       color: #0a0a0a; }
-    @media screen and (min-width: 1088px) {
+    @media screen and (min-width: 1024px) {
       .navbar.is-white .navbar-start > .navbar-item,
       .navbar.is-white .navbar-start .navbar-link,
       .navbar.is-white .navbar-end > .navbar-item,
@@ -4089,7 +4089,7 @@ a.list-item {
       border-color: white; }
     .navbar.is-black .navbar-burger {
       color: white; }
-    @media screen and (min-width: 1088px) {
+    @media screen and (min-width: 1024px) {
       .navbar.is-black .navbar-start > .navbar-item,
       .navbar.is-black .navbar-start .navbar-link,
       .navbar.is-black .navbar-end > .navbar-item,
@@ -4129,7 +4129,7 @@ a.list-item {
       border-color: #363636; }
     .navbar.is-light .navbar-burger {
       color: #363636; }
-    @media screen and (min-width: 1088px) {
+    @media screen and (min-width: 1024px) {
       .navbar.is-light .navbar-start > .navbar-item,
       .navbar.is-light .navbar-start .navbar-link,
       .navbar.is-light .navbar-end > .navbar-item,
@@ -4169,7 +4169,7 @@ a.list-item {
       border-color: whitesmoke; }
     .navbar.is-dark .navbar-burger {
       color: whitesmoke; }
-    @media screen and (min-width: 1088px) {
+    @media screen and (min-width: 1024px) {
       .navbar.is-dark .navbar-start > .navbar-item,
       .navbar.is-dark .navbar-start .navbar-link,
       .navbar.is-dark .navbar-end > .navbar-item,
@@ -4209,7 +4209,7 @@ a.list-item {
       border-color: #fff; }
     .navbar.is-primary .navbar-burger {
       color: #fff; }
-    @media screen and (min-width: 1088px) {
+    @media screen and (min-width: 1024px) {
       .navbar.is-primary .navbar-start > .navbar-item,
       .navbar.is-primary .navbar-start .navbar-link,
       .navbar.is-primary .navbar-end > .navbar-item,
@@ -4249,7 +4249,7 @@ a.list-item {
       border-color: #fff; }
     .navbar.is-link .navbar-burger {
       color: #fff; }
-    @media screen and (min-width: 1088px) {
+    @media screen and (min-width: 1024px) {
       .navbar.is-link .navbar-start > .navbar-item,
       .navbar.is-link .navbar-start .navbar-link,
       .navbar.is-link .navbar-end > .navbar-item,
@@ -4289,7 +4289,7 @@ a.list-item {
       border-color: #fff; }
     .navbar.is-info .navbar-burger {
       color: #fff; }
-    @media screen and (min-width: 1088px) {
+    @media screen and (min-width: 1024px) {
       .navbar.is-info .navbar-start > .navbar-item,
       .navbar.is-info .navbar-start .navbar-link,
       .navbar.is-info .navbar-end > .navbar-item,
@@ -4329,7 +4329,7 @@ a.list-item {
       border-color: #fff; }
     .navbar.is-success .navbar-burger {
       color: #fff; }
-    @media screen and (min-width: 1088px) {
+    @media screen and (min-width: 1024px) {
       .navbar.is-success .navbar-start > .navbar-item,
       .navbar.is-success .navbar-start .navbar-link,
       .navbar.is-success .navbar-end > .navbar-item,
@@ -4369,7 +4369,7 @@ a.list-item {
       border-color: rgba(0, 0, 0, 0.7); }
     .navbar.is-warning .navbar-burger {
       color: rgba(0, 0, 0, 0.7); }
-    @media screen and (min-width: 1088px) {
+    @media screen and (min-width: 1024px) {
       .navbar.is-warning .navbar-start > .navbar-item,
       .navbar.is-warning .navbar-start .navbar-link,
       .navbar.is-warning .navbar-end > .navbar-item,
@@ -4409,7 +4409,7 @@ a.list-item {
       border-color: #fff; }
     .navbar.is-danger .navbar-burger {
       color: #fff; }
-    @media screen and (min-width: 1088px) {
+    @media screen and (min-width: 1024px) {
       .navbar.is-danger .navbar-start > .navbar-item,
       .navbar.is-danger .navbar-start .navbar-link,
       .navbar.is-danger .navbar-end > .navbar-item,
@@ -4587,7 +4587,7 @@ a.navbar-item,
   height: 2px;
   margin: 0.5rem 0; }
 
-@media screen and (max-width: 1087px) {
+@media screen and (max-width: 1023px) {
   .navbar > .container {
     display: block; }
   .navbar-brand .navbar-item,
@@ -4624,7 +4624,7 @@ a.navbar-item,
   body.has-navbar-fixed-bottom-touch {
     padding-bottom: 3.25rem; } }
 
-@media screen and (min-width: 1088px) {
+@media screen and (min-width: 1024px) {
   .navbar,
   .navbar-menu,
   .navbar-start,
@@ -5412,7 +5412,7 @@ label.panel-block {
       width: 100%; }
     .column.is-offset-12, .column.is-offset-12-tablet {
       margin-left: 100%; } }
-  @media screen and (max-width: 1087px) {
+  @media screen and (max-width: 1023px) {
     .column.is-narrow-touch {
       flex: none; }
     .column.is-full-touch {
@@ -5523,7 +5523,7 @@ label.panel-block {
       width: 100%; }
     .column.is-offset-12-touch {
       margin-left: 100%; } }
-  @media screen and (min-width: 1088px) {
+  @media screen and (min-width: 1024px) {
     .column.is-narrow-desktop {
       flex: none; }
     .column.is-full-desktop {
@@ -5634,7 +5634,7 @@ label.panel-block {
       width: 100%; }
     .column.is-offset-12-desktop {
       margin-left: 100%; } }
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1216px) {
     .column.is-narrow-widescreen {
       flex: none; }
     .column.is-full-widescreen {
@@ -5745,7 +5745,7 @@ label.panel-block {
       width: 100%; }
     .column.is-offset-12-widescreen {
       margin-left: 100%; } }
-  @media screen and (min-width: 1472px) {
+  @media screen and (min-width: 1408px) {
     .column.is-narrow-fullhd {
       flex: none; }
     .column.is-full-fullhd {
@@ -5887,7 +5887,7 @@ label.panel-block {
   @media screen and (min-width: 769px), print {
     .columns:not(.is-desktop) {
       display: flex; } }
-  @media screen and (min-width: 1088px) {
+  @media screen and (min-width: 1024px) {
     .columns.is-desktop {
       display: flex; } }
 
@@ -5906,25 +5906,25 @@ label.panel-block {
   @media screen and (min-width: 769px), print {
     .columns.is-variable.is-0-tablet {
       --columnGap: 0rem; } }
-  @media screen and (min-width: 769px) and (max-width: 1087px) {
+  @media screen and (min-width: 769px) and (max-width: 1023px) {
     .columns.is-variable.is-0-tablet-only {
       --columnGap: 0rem; } }
-  @media screen and (max-width: 1087px) {
+  @media screen and (max-width: 1023px) {
     .columns.is-variable.is-0-touch {
       --columnGap: 0rem; } }
-  @media screen and (min-width: 1088px) {
+  @media screen and (min-width: 1024px) {
     .columns.is-variable.is-0-desktop {
       --columnGap: 0rem; } }
-  @media screen and (min-width: 1088px) and (max-width: 1279px) {
+  @media screen and (min-width: 1024px) and (max-width: 1215px) {
     .columns.is-variable.is-0-desktop-only {
       --columnGap: 0rem; } }
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1216px) {
     .columns.is-variable.is-0-widescreen {
       --columnGap: 0rem; } }
-  @media screen and (min-width: 1280px) and (max-width: 1471px) {
+  @media screen and (min-width: 1216px) and (max-width: 1407px) {
     .columns.is-variable.is-0-widescreen-only {
       --columnGap: 0rem; } }
-  @media screen and (min-width: 1472px) {
+  @media screen and (min-width: 1408px) {
     .columns.is-variable.is-0-fullhd {
       --columnGap: 0rem; } }
   .columns.is-variable.is-1 {
@@ -5935,25 +5935,25 @@ label.panel-block {
   @media screen and (min-width: 769px), print {
     .columns.is-variable.is-1-tablet {
       --columnGap: 0.25rem; } }
-  @media screen and (min-width: 769px) and (max-width: 1087px) {
+  @media screen and (min-width: 769px) and (max-width: 1023px) {
     .columns.is-variable.is-1-tablet-only {
       --columnGap: 0.25rem; } }
-  @media screen and (max-width: 1087px) {
+  @media screen and (max-width: 1023px) {
     .columns.is-variable.is-1-touch {
       --columnGap: 0.25rem; } }
-  @media screen and (min-width: 1088px) {
+  @media screen and (min-width: 1024px) {
     .columns.is-variable.is-1-desktop {
       --columnGap: 0.25rem; } }
-  @media screen and (min-width: 1088px) and (max-width: 1279px) {
+  @media screen and (min-width: 1024px) and (max-width: 1215px) {
     .columns.is-variable.is-1-desktop-only {
       --columnGap: 0.25rem; } }
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1216px) {
     .columns.is-variable.is-1-widescreen {
       --columnGap: 0.25rem; } }
-  @media screen and (min-width: 1280px) and (max-width: 1471px) {
+  @media screen and (min-width: 1216px) and (max-width: 1407px) {
     .columns.is-variable.is-1-widescreen-only {
       --columnGap: 0.25rem; } }
-  @media screen and (min-width: 1472px) {
+  @media screen and (min-width: 1408px) {
     .columns.is-variable.is-1-fullhd {
       --columnGap: 0.25rem; } }
   .columns.is-variable.is-2 {
@@ -5964,25 +5964,25 @@ label.panel-block {
   @media screen and (min-width: 769px), print {
     .columns.is-variable.is-2-tablet {
       --columnGap: 0.5rem; } }
-  @media screen and (min-width: 769px) and (max-width: 1087px) {
+  @media screen and (min-width: 769px) and (max-width: 1023px) {
     .columns.is-variable.is-2-tablet-only {
       --columnGap: 0.5rem; } }
-  @media screen and (max-width: 1087px) {
+  @media screen and (max-width: 1023px) {
     .columns.is-variable.is-2-touch {
       --columnGap: 0.5rem; } }
-  @media screen and (min-width: 1088px) {
+  @media screen and (min-width: 1024px) {
     .columns.is-variable.is-2-desktop {
       --columnGap: 0.5rem; } }
-  @media screen and (min-width: 1088px) and (max-width: 1279px) {
+  @media screen and (min-width: 1024px) and (max-width: 1215px) {
     .columns.is-variable.is-2-desktop-only {
       --columnGap: 0.5rem; } }
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1216px) {
     .columns.is-variable.is-2-widescreen {
       --columnGap: 0.5rem; } }
-  @media screen and (min-width: 1280px) and (max-width: 1471px) {
+  @media screen and (min-width: 1216px) and (max-width: 1407px) {
     .columns.is-variable.is-2-widescreen-only {
       --columnGap: 0.5rem; } }
-  @media screen and (min-width: 1472px) {
+  @media screen and (min-width: 1408px) {
     .columns.is-variable.is-2-fullhd {
       --columnGap: 0.5rem; } }
   .columns.is-variable.is-3 {
@@ -5993,25 +5993,25 @@ label.panel-block {
   @media screen and (min-width: 769px), print {
     .columns.is-variable.is-3-tablet {
       --columnGap: 0.75rem; } }
-  @media screen and (min-width: 769px) and (max-width: 1087px) {
+  @media screen and (min-width: 769px) and (max-width: 1023px) {
     .columns.is-variable.is-3-tablet-only {
       --columnGap: 0.75rem; } }
-  @media screen and (max-width: 1087px) {
+  @media screen and (max-width: 1023px) {
     .columns.is-variable.is-3-touch {
       --columnGap: 0.75rem; } }
-  @media screen and (min-width: 1088px) {
+  @media screen and (min-width: 1024px) {
     .columns.is-variable.is-3-desktop {
       --columnGap: 0.75rem; } }
-  @media screen and (min-width: 1088px) and (max-width: 1279px) {
+  @media screen and (min-width: 1024px) and (max-width: 1215px) {
     .columns.is-variable.is-3-desktop-only {
       --columnGap: 0.75rem; } }
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1216px) {
     .columns.is-variable.is-3-widescreen {
       --columnGap: 0.75rem; } }
-  @media screen and (min-width: 1280px) and (max-width: 1471px) {
+  @media screen and (min-width: 1216px) and (max-width: 1407px) {
     .columns.is-variable.is-3-widescreen-only {
       --columnGap: 0.75rem; } }
-  @media screen and (min-width: 1472px) {
+  @media screen and (min-width: 1408px) {
     .columns.is-variable.is-3-fullhd {
       --columnGap: 0.75rem; } }
   .columns.is-variable.is-4 {
@@ -6022,25 +6022,25 @@ label.panel-block {
   @media screen and (min-width: 769px), print {
     .columns.is-variable.is-4-tablet {
       --columnGap: 1rem; } }
-  @media screen and (min-width: 769px) and (max-width: 1087px) {
+  @media screen and (min-width: 769px) and (max-width: 1023px) {
     .columns.is-variable.is-4-tablet-only {
       --columnGap: 1rem; } }
-  @media screen and (max-width: 1087px) {
+  @media screen and (max-width: 1023px) {
     .columns.is-variable.is-4-touch {
       --columnGap: 1rem; } }
-  @media screen and (min-width: 1088px) {
+  @media screen and (min-width: 1024px) {
     .columns.is-variable.is-4-desktop {
       --columnGap: 1rem; } }
-  @media screen and (min-width: 1088px) and (max-width: 1279px) {
+  @media screen and (min-width: 1024px) and (max-width: 1215px) {
     .columns.is-variable.is-4-desktop-only {
       --columnGap: 1rem; } }
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1216px) {
     .columns.is-variable.is-4-widescreen {
       --columnGap: 1rem; } }
-  @media screen and (min-width: 1280px) and (max-width: 1471px) {
+  @media screen and (min-width: 1216px) and (max-width: 1407px) {
     .columns.is-variable.is-4-widescreen-only {
       --columnGap: 1rem; } }
-  @media screen and (min-width: 1472px) {
+  @media screen and (min-width: 1408px) {
     .columns.is-variable.is-4-fullhd {
       --columnGap: 1rem; } }
   .columns.is-variable.is-5 {
@@ -6051,25 +6051,25 @@ label.panel-block {
   @media screen and (min-width: 769px), print {
     .columns.is-variable.is-5-tablet {
       --columnGap: 1.25rem; } }
-  @media screen and (min-width: 769px) and (max-width: 1087px) {
+  @media screen and (min-width: 769px) and (max-width: 1023px) {
     .columns.is-variable.is-5-tablet-only {
       --columnGap: 1.25rem; } }
-  @media screen and (max-width: 1087px) {
+  @media screen and (max-width: 1023px) {
     .columns.is-variable.is-5-touch {
       --columnGap: 1.25rem; } }
-  @media screen and (min-width: 1088px) {
+  @media screen and (min-width: 1024px) {
     .columns.is-variable.is-5-desktop {
       --columnGap: 1.25rem; } }
-  @media screen and (min-width: 1088px) and (max-width: 1279px) {
+  @media screen and (min-width: 1024px) and (max-width: 1215px) {
     .columns.is-variable.is-5-desktop-only {
       --columnGap: 1.25rem; } }
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1216px) {
     .columns.is-variable.is-5-widescreen {
       --columnGap: 1.25rem; } }
-  @media screen and (min-width: 1280px) and (max-width: 1471px) {
+  @media screen and (min-width: 1216px) and (max-width: 1407px) {
     .columns.is-variable.is-5-widescreen-only {
       --columnGap: 1.25rem; } }
-  @media screen and (min-width: 1472px) {
+  @media screen and (min-width: 1408px) {
     .columns.is-variable.is-5-fullhd {
       --columnGap: 1.25rem; } }
   .columns.is-variable.is-6 {
@@ -6080,25 +6080,25 @@ label.panel-block {
   @media screen and (min-width: 769px), print {
     .columns.is-variable.is-6-tablet {
       --columnGap: 1.5rem; } }
-  @media screen and (min-width: 769px) and (max-width: 1087px) {
+  @media screen and (min-width: 769px) and (max-width: 1023px) {
     .columns.is-variable.is-6-tablet-only {
       --columnGap: 1.5rem; } }
-  @media screen and (max-width: 1087px) {
+  @media screen and (max-width: 1023px) {
     .columns.is-variable.is-6-touch {
       --columnGap: 1.5rem; } }
-  @media screen and (min-width: 1088px) {
+  @media screen and (min-width: 1024px) {
     .columns.is-variable.is-6-desktop {
       --columnGap: 1.5rem; } }
-  @media screen and (min-width: 1088px) and (max-width: 1279px) {
+  @media screen and (min-width: 1024px) and (max-width: 1215px) {
     .columns.is-variable.is-6-desktop-only {
       --columnGap: 1.5rem; } }
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1216px) {
     .columns.is-variable.is-6-widescreen {
       --columnGap: 1.5rem; } }
-  @media screen and (min-width: 1280px) and (max-width: 1471px) {
+  @media screen and (min-width: 1216px) and (max-width: 1407px) {
     .columns.is-variable.is-6-widescreen-only {
       --columnGap: 1.5rem; } }
-  @media screen and (min-width: 1472px) {
+  @media screen and (min-width: 1408px) {
     .columns.is-variable.is-6-fullhd {
       --columnGap: 1.5rem; } }
   .columns.is-variable.is-7 {
@@ -6109,25 +6109,25 @@ label.panel-block {
   @media screen and (min-width: 769px), print {
     .columns.is-variable.is-7-tablet {
       --columnGap: 1.75rem; } }
-  @media screen and (min-width: 769px) and (max-width: 1087px) {
+  @media screen and (min-width: 769px) and (max-width: 1023px) {
     .columns.is-variable.is-7-tablet-only {
       --columnGap: 1.75rem; } }
-  @media screen and (max-width: 1087px) {
+  @media screen and (max-width: 1023px) {
     .columns.is-variable.is-7-touch {
       --columnGap: 1.75rem; } }
-  @media screen and (min-width: 1088px) {
+  @media screen and (min-width: 1024px) {
     .columns.is-variable.is-7-desktop {
       --columnGap: 1.75rem; } }
-  @media screen and (min-width: 1088px) and (max-width: 1279px) {
+  @media screen and (min-width: 1024px) and (max-width: 1215px) {
     .columns.is-variable.is-7-desktop-only {
       --columnGap: 1.75rem; } }
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1216px) {
     .columns.is-variable.is-7-widescreen {
       --columnGap: 1.75rem; } }
-  @media screen and (min-width: 1280px) and (max-width: 1471px) {
+  @media screen and (min-width: 1216px) and (max-width: 1407px) {
     .columns.is-variable.is-7-widescreen-only {
       --columnGap: 1.75rem; } }
-  @media screen and (min-width: 1472px) {
+  @media screen and (min-width: 1408px) {
     .columns.is-variable.is-7-fullhd {
       --columnGap: 1.75rem; } }
   .columns.is-variable.is-8 {
@@ -6138,25 +6138,25 @@ label.panel-block {
   @media screen and (min-width: 769px), print {
     .columns.is-variable.is-8-tablet {
       --columnGap: 2rem; } }
-  @media screen and (min-width: 769px) and (max-width: 1087px) {
+  @media screen and (min-width: 769px) and (max-width: 1023px) {
     .columns.is-variable.is-8-tablet-only {
       --columnGap: 2rem; } }
-  @media screen and (max-width: 1087px) {
+  @media screen and (max-width: 1023px) {
     .columns.is-variable.is-8-touch {
       --columnGap: 2rem; } }
-  @media screen and (min-width: 1088px) {
+  @media screen and (min-width: 1024px) {
     .columns.is-variable.is-8-desktop {
       --columnGap: 2rem; } }
-  @media screen and (min-width: 1088px) and (max-width: 1279px) {
+  @media screen and (min-width: 1024px) and (max-width: 1215px) {
     .columns.is-variable.is-8-desktop-only {
       --columnGap: 2rem; } }
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1216px) {
     .columns.is-variable.is-8-widescreen {
       --columnGap: 2rem; } }
-  @media screen and (min-width: 1280px) and (max-width: 1471px) {
+  @media screen and (min-width: 1216px) and (max-width: 1407px) {
     .columns.is-variable.is-8-widescreen-only {
       --columnGap: 2rem; } }
-  @media screen and (min-width: 1472px) {
+  @media screen and (min-width: 1408px) {
     .columns.is-variable.is-8-fullhd {
       --columnGap: 2rem; } }
 
@@ -6245,7 +6245,7 @@ label.panel-block {
       .hero.is-white .subtitle a:not(.button),
       .hero.is-white .subtitle strong {
         color: #0a0a0a; }
-    @media screen and (max-width: 1087px) {
+    @media screen and (max-width: 1023px) {
       .hero.is-white .navbar-menu {
         background-color: white; } }
     .hero.is-white .navbar-item,
@@ -6289,7 +6289,7 @@ label.panel-block {
       .hero.is-black .subtitle a:not(.button),
       .hero.is-black .subtitle strong {
         color: white; }
-    @media screen and (max-width: 1087px) {
+    @media screen and (max-width: 1023px) {
       .hero.is-black .navbar-menu {
         background-color: #0a0a0a; } }
     .hero.is-black .navbar-item,
@@ -6333,7 +6333,7 @@ label.panel-block {
       .hero.is-light .subtitle a:not(.button),
       .hero.is-light .subtitle strong {
         color: #363636; }
-    @media screen and (max-width: 1087px) {
+    @media screen and (max-width: 1023px) {
       .hero.is-light .navbar-menu {
         background-color: whitesmoke; } }
     .hero.is-light .navbar-item,
@@ -6377,7 +6377,7 @@ label.panel-block {
       .hero.is-dark .subtitle a:not(.button),
       .hero.is-dark .subtitle strong {
         color: whitesmoke; }
-    @media screen and (max-width: 1087px) {
+    @media screen and (max-width: 1023px) {
       .hero.is-dark .navbar-menu {
         background-color: #363636; } }
     .hero.is-dark .navbar-item,
@@ -6421,7 +6421,7 @@ label.panel-block {
       .hero.is-primary .subtitle a:not(.button),
       .hero.is-primary .subtitle strong {
         color: #fff; }
-    @media screen and (max-width: 1087px) {
+    @media screen and (max-width: 1023px) {
       .hero.is-primary .navbar-menu {
         background-color: #B83642; } }
     .hero.is-primary .navbar-item,
@@ -6465,7 +6465,7 @@ label.panel-block {
       .hero.is-link .subtitle a:not(.button),
       .hero.is-link .subtitle strong {
         color: #fff; }
-    @media screen and (max-width: 1087px) {
+    @media screen and (max-width: 1023px) {
       .hero.is-link .navbar-menu {
         background-color: #2B85B2; } }
     .hero.is-link .navbar-item,
@@ -6509,7 +6509,7 @@ label.panel-block {
       .hero.is-info .subtitle a:not(.button),
       .hero.is-info .subtitle strong {
         color: #fff; }
-    @media screen and (max-width: 1087px) {
+    @media screen and (max-width: 1023px) {
       .hero.is-info .navbar-menu {
         background-color: #2794CC; } }
     .hero.is-info .navbar-item,
@@ -6553,7 +6553,7 @@ label.panel-block {
       .hero.is-success .subtitle a:not(.button),
       .hero.is-success .subtitle strong {
         color: #fff; }
-    @media screen and (max-width: 1087px) {
+    @media screen and (max-width: 1023px) {
       .hero.is-success .navbar-menu {
         background-color: #11B236; } }
     .hero.is-success .navbar-item,
@@ -6597,7 +6597,7 @@ label.panel-block {
       .hero.is-warning .subtitle a:not(.button),
       .hero.is-warning .subtitle strong {
         color: rgba(0, 0, 0, 0.7); }
-    @media screen and (max-width: 1087px) {
+    @media screen and (max-width: 1023px) {
       .hero.is-warning .navbar-menu {
         background-color: #FFFA64; } }
     .hero.is-warning .navbar-item,
@@ -6641,7 +6641,7 @@ label.panel-block {
       .hero.is-danger .subtitle a:not(.button),
       .hero.is-danger .subtitle strong {
         color: #fff; }
-    @media screen and (max-width: 1087px) {
+    @media screen and (max-width: 1023px) {
       .hero.is-danger .navbar-menu {
         background-color: #FF4B5B; } }
     .hero.is-danger .navbar-item,
@@ -6737,7 +6737,7 @@ label.panel-block {
 
 .section {
   padding: 3rem 0; }
-  @media screen and (min-width: 1088px) {
+  @media screen and (min-width: 1024px) {
     .section.is-medium {
       padding: 9rem 1.5rem; }
     .section.is-large {
@@ -6753,12 +6753,12 @@ body {
 /* This was made before using sass ... */
 .main-container {
   max-width: 960px;
-  margin: 0 64px; }
-  @media screen and (min-width: 1088px) {
+  margin: 0 32px; }
+  @media screen and (min-width: 1024px) {
     .main-container {
       margin: 0 auto; } }
 
-.human-bio p {
+.main-body p {
   font-style: italic; }
 
 ul.contacts {

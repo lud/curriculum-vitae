@@ -1,9 +1,4 @@
-
-### <i class="fas fa-database"></i> Bases de données
-
-- PostgreSQL, PostGis
-- Oracle, Oracle Spatial
-- MySQL, SQLite
+<!--@topic sig -->
 
 ### <i class="fas fa-layer-group"></i> SIG
 
@@ -11,9 +6,18 @@
 - MapGuide, MapGuide OS
 - Mapinfo, QGis
 
+<!--@ -->
+
+### <i class="fas fa-database"></i> Bases de données
+
+- PostgreSQL, PostGis
+- Oracle, Oracle Spatial
+- MySQL, SQLite
+
+
 ### <i class="fas fa-code"></i> Programmation
 
-- Javascript, ES6, React/Redux, Vue/VueX, Cordova, Svelte
+- JavaScript, ES6, React/Redux, Vue/VueX, Cordova, Svelte
 - OpenLayers, Leaflet, Mapbox
 - PHP 5/7, Laravel, Symfony, Wordpress
 - Erlang/Elixir/OTP, Phoenix, Ecto, Mnesia

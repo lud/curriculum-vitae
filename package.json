@@ -1,13 +1,16 @@
 {
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.4.1",
-    "bulma": "^0.7.2"
+    "@remy/snap": "^1.1.0",
+    "bulma": "^0.7.2",
+    "node-sass": "^4.9.4"
   },
   "devDdependencies": {
     "node-sass": "^4.9.3"
   },
   "scripts": {
-    "build": "node-sass --omit-source-map-url sass/main.scss assets/css/main.css",
-    "dev": "node-sass --omit-source-map-url sass/main.scss assets/css/main.css --watch"
+    "mirror": "snap localhost:8000 --output mirrored",
+    "build": "node-sass --omit-source-map-url src/sass/main.scss assets/css/main.css",
+    "dev": "node-sass --omit-source-map-url src/sass/main.scss assets/css/main.css --watch"
   }
 }

@@ -12,7 +12,11 @@ body {
     }
 }
 
-.human-bio p {
+.main-body h1 {
+    @extend .title.is-1;
+}
+
+.main-body p {
     font-style: italic;
 }
 

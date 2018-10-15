@@ -1,116 +1,105 @@
 <?php
+declare(strict_types=1);
 
-require __DIR__ . '/vendor/autoload.php';
+
+function dump($term) {
+    echo "<pre>";
+    var_dump($term);
+    echo "</pre>\n";
+}
 
 define('TEMPLATES_PATH', __DIR__ . '/views');
 define('TEMPLATES_CACHE_PATH', __DIR__ . '/cache/views');
-function content($path) {
-    return __DIR__ . "/content/$path";
+define('CONTENT_PATH', __DIR__ . '/content');
+function CONTENT_FILE($path) {
+    return CONTENT_PATH . "/$path";
 }
 
+require __DIR__ . '/vendor/autoload.php';
 
-$content = new class {
+use \Psr\Http\Message\ServerRequestInterface as Request;
+use \Psr\Http\Message\ResponseInterface as Response;
 
-    private $files = [];
-    private $tags = [];
 
-    public function __call($key, $args)
-    {
-        if ($this->has($key)) {
-            return $this->make($key);
+$app = new \Slim\App(['settings' => [
+    'displayErrorDetails' => true
+]]);
+
+$container = $app->getContainer();
+
+$container['view'] = function ($container) {
+    $view = new \Slim\Views\Twig(TEMPLATES_PATH, [
+        'cache' => TEMPLATES_CACHE_PATH,
+        'auto_reload' => true
+    ]);
+
+    // Instantiate and add Slim specific extension
+    $basePath = rtrim(str_ireplace('index.php', '', $container->get('request')->getUri()->getBasePath()), '/');
+    $view->addExtension(new Slim\Views\TwigExtension($container->get('router'), $basePath));
+    $stripProtocol = new Twig_filter('strip_protocol', function (string $url) {
+        if (0 === strpos($url, 'https://')) {
+            return substr($url, 8);
         }
-        throw new \Exception("Undefined content '$key'");
-    }
-
-    public function has($key)
-    {
-        return isset($this->files[$key]);
-    }
-
-    public function add($key, $path, $tags = [])
-    {
-        if (isset($this->files[$key])) {
-            throw new \Exception("Key '$key' already set");
+        if (0 === strpos($url, 'http://')) {
+            return substr($url, 7);
         }
-        $this->files[$key] = $path;
-        foreach ((array) $tags as $tag) {
-            $this->tags[$tag][] = $key;
-        }
-    }
+        return $url;
+    });
+    $view->getEnvironment()->addFilter($stripProtocol);
 
-    public function tagged($tag) : \Generator
-    {
-        $keys = $this->tags[$tag] ?? [];
-        foreach ($keys as $key) {
-            yield $this->make($key);
-        }
-    }
-
-    private function make($key)
-    {
-        $path = $this->files[$key];
-        $source = file_get_contents($path);
-        $document = \Spatie\YamlFrontMatter\YamlFrontMatter::parse($source);
-        $content = new \DocumentTwigOutput($document);
-        return $content;
-    }
+    return $view;
 };
 
-class DocumentTwigOutput {
+$container['content'] = function ($container) {
 
-    private $document;
+    $topicFilter = $container['topicFilter'];
 
-    public function __construct(\Spatie\YamlFrontMatter\Document $document)
-    {
-        $this->document = $document;
+    $content = new CV\ContentManager();
+
+    $content->setDocumentBodyFilter($topicFilter);
+    // Main data
+    $content->add('main', CONTENT_FILE('main.md'));
+    $content->add('human', CONTENT_FILE('human.md'));
+    $content->add('skills', CONTENT_FILE('skills.md'));
+    // Work XP
+    $content->add('gfi', CONTENT_FILE('experience/gfi.md'), 'xp');
+    $content->add('toulouseweb', CONTENT_FILE('experience/toulouseweb.md'), 'xp');
+    $content->add('arles', CONTENT_FILE('experience/arles.md'), 'xp');
+    // School
+    $content->add('lpro', CONTENT_FILE('formation/lpro.md'), 'school');
+    $content->add('ut2', CONTENT_FILE('formation/ut2.md'), 'school');
+    $content->add('lycee', CONTENT_FILE('formation/lycee.md'), 'school');
+
+    return $content;
+
+};
+
+$container['topicFilter'] = null;
+
+$app->get('/', function (Request $request, Response $response, array $args) {
+    $filter = CV\DocumentBodyFilter::create();
+    $filter->exclude('notCombined');
+    $this['topicFilter'] = $filter;
+    return $this->view->render($response, 'index.html', ['content' => $this->content]);
+});
+
+$app->get('/cv/{topic:sig|webdev}', function (Request $request, Response $response, array $args) {
+    $filter = CV\DocumentBodyFilter::create();
+
+    switch ($args['topic']) {
+        case 'sig':
+            $filter->exclude('topic', ['webdev', 'combined']);
+            break;
+        case 'webdev':
+            $filter->exclude('topic', ['sig', 'combined']);
+            break;
     }
 
-    public function body()
-    {
-        $md = $this->document->body();
-        $parser = new Parsedown();
-        $html = $parser->text($md);
-        return new \Twig_Markup($html, 'UTF-8');
-    }
+    $this['topicFilter'] = $filter;
 
-    public function __call($key, $_)
-    {
-        $value = $this->document->matter($key, "[$key]");
-        if (!is_string($value)) {
-            $value = json_encode($value, JSON_PRETTY_PRINT);
-        }
-        return $value;
-    }
+    return $this->view->render($response, 'index.html', ['content' => $this->content]);
+})->setName('cv');
 
-}
-
-// Main data
-$content->add('main', content('main.md'));
-$content->add('human', content('human.md'));
-$content->add('skills', content('skills.md'));
-// Work XP
-$content->add('gfi', content('experience/gfi.md'), 'xp');
-$content->add('toulouseweb', content('experience/toulouseweb.md'), 'xp');
-$content->add('arles', content('experience/arles.md'), 'xp');
-// School
-$content->add('lpro', content('formation/lpro.md'), 'school');
-$content->add('ut2', content('formation/ut2.md'), 'school');
-$content->add('lycee', content('formation/lycee.md'), 'school');
-
-$twigLoader = new \Twig_Loader_Filesystem(TEMPLATES_PATH);
-$twig = new \Twig_Environment($twigLoader, [
-    'OFF_cache' => TEMPLATES_CACHE_PATH,
-]);
-$twig->addFilter(new Twig_filter('strip_protocol', function (string $url) {
-    if (0 === strpos($url, 'https://')) {
-        return substr($url, 8);
-    }
-    if (0 === strpos($url, 'http://')) {
-        return substr($url, 7);
-    }
-    return $url;
-}));
-$template = $twig->load('index.html');
+$app->run();
 
 
-echo $template->render(['content' => $content]);
