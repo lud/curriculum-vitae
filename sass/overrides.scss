@@ -4,16 +4,11 @@ body {
 
 /* This was made before using sass ... */
 
-@media screen and (min-width: 1472px) {
-    .container.main-container {
-        max-width: 960px;
-        width: 960px;
-    }
-}
-@media screen and (min-width: 1280px) {
-    .container.main-container {
-        max-width: 960px;
-        width: 960px;
+.main-container {
+    max-width: $desktop - (2 * $gap);
+    margin:0 $gap;
+    @include desktop {
+        margin:0 auto;
     }
 }
 
@@ -48,7 +43,7 @@ h4 svg.svg-inline--fa {
 .content .data-formation-title,
 .content .data-job-title ,
 .content .sidebar h3 {
-    color: #ab4444;/*red*/
+    color: $primary;
     text-transform: uppercase;
 }
 .content .sidebar h4 svg {

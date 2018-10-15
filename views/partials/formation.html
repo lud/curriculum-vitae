@@ -1,7 +1,7 @@
 <h2><i class="fas fa-graduation-cap"></i> Formation</h2>
 {% for school in content.tagged('school') %}
     <h3 class="title data-formation-title">{{ school.title }}</h3>
-    <h4 class="subtitle data-school">{{ school.schoolName }}</h4>
-    {{ school.dateRange }}
+    <h4 class="subtitle data-school">{{ school.schoolName }}, {{ school.dateRange }}</h4>
+
     {{ school.body }}
 {% endfor %}

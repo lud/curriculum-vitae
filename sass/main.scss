@@ -1,7 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,400i,700,700i');
 @charset "utf-8";
 
-// $body-size: 14px;
+
+$body-size: 16px;
+// $gap: 3px;
 $section-padding: 3rem 0;
+
+$theme-blue: #2B85B2;
+$theme-light-blue: #2794CC;
+$theme-light-red: #FF4B5B;
+$theme-red: #B83642;
+$theme-yellow: #FFFA64;
+$theme-green: #11B236;
+$theme-light-green: #4BFF74;
+
+$primary: $theme-red;
+$link: $theme-blue;
+$info: $theme-light-blue;
+$success: $theme-green;
+$warning: $theme-yellow;
+$danger: $theme-light-red;
+
+
+
+$family-sans-serif: BlinkMacSystemFont, -apple-system, "Roboto Condensed", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+
 
 @import "../node_modules/bulma/bulma.sass";
 @import "./overrides.scss";
