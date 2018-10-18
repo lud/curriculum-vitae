@@ -3,6 +3,7 @@ employer: Gfi Informatique
 jobType: Développeur Full Stack
 dateRange: 2013 – 2017
 ---
+<!-- @online -->
 
 J'ai participé à la conception, la réalisation et la maintenance de nombreux
 modules applicatifs, en autonomie ou en équipe.
@@ -23,6 +24,8 @@ routier.
 
 J'ai également reçu une distinction et un prix pour mon travail au sein de la
 branche Gfi Progiciels.
+
+<!-- @ -->
 
 ##### Applications web JS
 

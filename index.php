@@ -76,29 +76,30 @@ $container['content'] = function ($container) {
 
 $container['topicFilter'] = null;
 
-$app->get('/', function (Request $request, Response $response, array $args) {
+function willServeCv (Request $request, Response $response, array $args) {
+    global $container; // Ugh ... we need controllers now :)
     $filter = CV\DocumentBodyFilter::create();
-    $filter->exclude('notCombined');
-    $this['topicFilter'] = $filter;
-    return $this->view->render($response, 'index.html', ['content' => $this->content]);
-});
-
-$app->get('/cv/{topic:sig|webdev}', function (Request $request, Response $response, array $args) {
-    $filter = CV\DocumentBodyFilter::create();
-
-    switch ($args['topic']) {
+    if ('short' === ($args['issue'] ?? 'full')) {
+        $filter->exclude('online');
+    }
+    switch ($args['topic'] ?? 'all') {
         case 'sig':
             $filter->exclude('topic', ['webdev', 'combined']);
             break;
         case 'webdev':
             $filter->exclude('topic', ['sig', 'combined']);
             break;
+        case 'all':
+            $filter->exclude('notCombined');
+            break;
     }
+    $container['topicFilter'] = $filter;
+    return $container->view->render($response, 'index.html', ['content' => $container->content]);
+}
 
-    $this['topicFilter'] = $filter;
+$app->get('/', 'willServeCv');
 
-    return $this->view->render($response, 'index.html', ['content' => $this->content]);
-})->setName('cv');
+$app->get('/cv/{topic:all|sig|webdev}/{issue:short|full}',  'willServeCv')->setName('cv');
 
 $app->run();
 

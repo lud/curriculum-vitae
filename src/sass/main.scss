@@ -2,7 +2,7 @@
 @charset "utf-8";
 
 
-$body-size: 16px;
+$body-size: 15px;
 $gap: 32px;
 $section-padding: 3rem 0;
 
@@ -28,3 +28,9 @@ $family-sans-serif: BlinkMacSystemFont, -apple-system, "Roboto", "Segoe UI", "Ro
 
 @import "../../node_modules/bulma/bulma.sass";
 @import "./overrides.scss";
+
+// @media print {
+//     .newpage {
+//         page-break-before: always;
+//     }
+// }
