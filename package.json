@@ -1,16 +1,24 @@
 {
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.4.1",
-    "@remy/snap": "^1.1.0",
-    "bulma": "^0.7.2",
-    "node-sass": "^4.9.4"
-  },
-  "devDdependencies": {
-    "node-sass": "^4.9.3"
+    "@fortawesome/fontawesome-svg-core": "^1.2.8",
+    "@fortawesome/free-brands-svg-icons": "^5.5.0",
+    "@fortawesome/free-solid-svg-icons": "^5.5.0",
+    "bulma": "^0.7.2"
   },
   "scripts": {
     "mirror": "snap localhost:8000 --output mirrored",
-    "build": "node-sass --omit-source-map-url src/sass/main.scss assets/css/main.css",
-    "dev": "node-sass --omit-source-map-url src/sass/main.scss assets/css/main.css --watch"
+    "build": "rollup -c",
+    "sass": "node-sass --omit-source-map-url src/sass/main.scss assets/css/main.css --watch",
+    "dev": "rollup -c -w"
+  },
+  "devDependencies": {
+    "@remy/snap": "^1.1.0",
+    "node-sass": "^4.10.0",
+    "rollup": "^0.67.1",
+    "rollup-plugin-buble": "^0.19.4",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-node-resolve": "^3.4.0",
+    "rollup-plugin-postcss": "^1.6.2",
+    "rollup-plugin-uglify": "^6.0.0"
   }
 }
