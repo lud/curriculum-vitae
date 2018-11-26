@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="/assets/bundle.min.css"/>
 
 <title>{{ content.main.title }}</title>
+
 <div class="section">
   <div class="main-container content">
     <div class="columns">
@@ -31,15 +32,11 @@
 
 <footer style="display: none">
   <h2>Versions du CV spécifiques à un métier</h2>
-  <nav>
-    <a href="{{ path_for('cv', {'issue': 'full', 'topic': 'all'}) }}">Développeur SIG / Web</a>
-    <a href="{{ path_for('cv', {'issue': 'full', 'topic': 'sig'}) }}">Développeur SIG</a>
-    <a href="{{ path_for('cv', {'issue': 'full', 'topic': 'webdev'}) }}">Développeur Web Full Stack</a>
+  <nav>{% for topic in cvTopics %}
 
-    <a href="{{ path_for('cv', {'issue': 'short', 'topic': 'all'}) }}">Développeur SIG / Web (Short Version)</a>
-    <a href="{{ path_for('cv', {'issue': 'short', 'topic': 'sig'}) }}">Développeur SIG (Short Version)</a>
-    <a href="{{ path_for('cv', {'issue': 'short', 'topic': 'webdev'}) }}">Développeur Web Full Stack (Short Version)</a>
-  </nav>
+    <a href="{{ path_for('cv', {'issue': 'full', 'topic': topic}) }}">{{ topic }}</a>
+    <a href="{{ path_for('cv', {'issue': 'short', 'topic': topic}) }}">{{ topic }} (Short Version)</a>
+  {% endfor %}</nav>
 </footer>
 
 <script type="text/javascript" src="/assets/bundle.min.js"></script>

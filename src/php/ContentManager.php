@@ -4,10 +4,18 @@ namespace CV;
 
 class ContentManager {
 
+    private $rootDir = [];
     private $files = [];
     private $tags = [];
     private $docBodyFilter;
 
+    public function __construct($rootDir)
+    {
+        if (!is_dir($rootDir)) {
+            throw new \InvalidArgumentException("Root dir does not exist : '$rootDir'");
+        }
+        $this->rootDir = $rootDir;
+    }
     public function __call($key, $args)
     {
         if ($this->has($key)) {
@@ -23,6 +31,7 @@ class ContentManager {
 
     public function add($key, $path, $tags = [])
     {
+        $path = $this->joinPath($this->rootDir, $path);
         if (isset($this->files[$key])) {
             throw new \Exception("Key '$key' already set");
         }
@@ -54,7 +63,7 @@ class ContentManager {
 
     private function findDirFiles($path)
     {
-        $files = scandir($path, SCANDIR_SORT_ASCENDING);
+        $files = scandir($this->joinPath($this->rootDir, $path), SCANDIR_SORT_ASCENDING);
         // Remove directories and "hidden files"
         $files = array_filter($files, function($filename){
             return false === ($filename[0] === '.' || is_dir($path . DIRECTORY_SEPARATOR . $filename));

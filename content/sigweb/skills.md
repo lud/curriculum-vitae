@@ -1,4 +1,3 @@
-<!--@topic sig -->
 
 ### <i class="fas fa-layer-group"></i> SIG
 
@@ -6,14 +5,11 @@
 - MapGuide, MapGuide OS
 - Mapinfo, QGis
 
-<!--@ -->
-
 ### <i class="fas fa-database"></i> Bases de données
 
 - PostgreSQL, PostGis
 - Oracle, Oracle Spatial
 - MySQL, SQLite
-
 
 ### <i class="fas fa-code"></i> Programmation
 

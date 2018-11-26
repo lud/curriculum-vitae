@@ -1,21 +1,30 @@
 <?php
 declare(strict_types=1);
-
+require __DIR__ . '/vendor/autoload.php';
 
 function dump($term) {
+    $trace = debug_backtrace();
+    $tracelen = count($trace);
     echo "<pre>";
+    extract($trace[0]);
+    echo "$file:$line\n";
     var_dump($term);
     echo "</pre>\n";
 }
 
 define('TEMPLATES_PATH', __DIR__ . '/views');
 define('TEMPLATES_CACHE_PATH', __DIR__ . '/cache/views');
-define('CONTENT_PATH', __DIR__ . '/content');
-function CONTENT_FILE($path) {
-    return CONTENT_PATH . "/$path";
+function CONTENT_PATH($dir) {
+    return __DIR__ . "/content/$dir";
 }
 
-require __DIR__ . '/vendor/autoload.php';
+$existingTopics = scandir(CONTENT_PATH('.'));
+$existingTopics = array_filter($existingTopics, function($dir){
+    if (!is_dir(CONTENT_PATH($dir)) || '.' === $dir[0]) {
+        return false;
+    }
+    return true;
+});
 
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
@@ -27,7 +36,7 @@ $app = new \Slim\App(['settings' => [
 
 $container = $app->getContainer();
 
-$container['view'] = function ($container) {
+$container['view'] = function ($container) use ($existingTopics) {
     $view = new \Slim\Views\Twig(TEMPLATES_PATH, [
         'cache' => TEMPLATES_CACHE_PATH,
         'auto_reload' => true
@@ -46,56 +55,52 @@ $container['view'] = function ($container) {
         return $url;
     });
     $view->getEnvironment()->addFilter($stripProtocol);
+    $view->getEnvironment()->addGlobal('cvTopics', $existingTopics);
 
     return $view;
 };
 
-$container['content'] = function ($container) {
-
-    $topicFilter = $container['topicFilter'];
-
-    $content = new CV\ContentManager();
-
-    $content->setDocumentBodyFilter($topicFilter);
+$container['content'] = $container->factory(function ($container) {
+    $filter = $container->bodyFilter;
+    $rootDir = $container->rootDir;
+    $content = new CV\ContentManager(CONTENT_PATH($rootDir));
+    $content->setDocumentBodyFilter($filter);
     // Main data
-    $content->add('main', CONTENT_FILE('main.md'));
-    $content->add('human', CONTENT_FILE('human.md'));
-    $content->add('skills', CONTENT_FILE('skills.md'));
+    $content->add('main', 'main.md');
+    $content->add('human', '../human.md');
+    $content->add('skills', 'skills.md');
     // Work XP
-    $content->addDirectory(CONTENT_FILE('experience'), 'xp');
+    $content->addDirectory('experience', 'xp');
     // School
-    $content->addDirectory(CONTENT_FILE('formation'), 'school');
-
+    $content->addDirectory('formation', 'school');
     return $content;
+});
 
-};
-
-$container['topicFilter'] = null;
+$container['bodyFilter'] = null;
+$container['rootDir'] = null;
 
 function willServeCv (Request $request, Response $response, array $args) {
     global $container; // Ugh ... we need controllers now :)
+    // Create a filter
     $filter = CV\DocumentBodyFilter::create();
     if ('short' === ($args['issue'] ?? 'full')) {
         $filter->exclude('online');
     }
-    switch ($args['topic'] ?? 'all') {
-        case 'sig':
-            $filter->exclude('topic', ['webdev', 'combined']);
-            break;
-        case 'webdev':
-            $filter->exclude('topic', ['sig', 'combined']);
-            break;
-        case 'all':
-            $filter->exclude('notCombined');
-            break;
-    }
-    $container['topicFilter'] = $filter;
+    $container['bodyFilter'] = $filter;
+    // Define the content directory
+    $topic = $args['topic'] ?? 'sigweb';
+    $container['rootDir'] = $topic;
+    // Get the component & render
+    $content = $container['content'];
     return $container->view->render($response, 'index.html', ['content' => $container->content]);
 }
 
 $app->get('/', 'willServeCv');
 
-$app->get('/cv/{topic:all|sig|webdev}/{issue:short|full}',  'willServeCv')->setName('cv');
+
+$existingTopicsRe = implode('|', $existingTopics);
+
+$app->get("/cv/{topic:$existingTopicsRe}[/{issue:short|full}]",  'willServeCv')->setName('cv');
 
 $app->run();
 
