@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="/assets/bundle.min.css"/>
 
-<title>{{ content.main.title }}</title>
+<title>{{ content.human.displayName ~ ' | ' ~ content.main.title }}</title>
 
 <div class="section">
   <div class="main-container content">
@@ -11,6 +11,7 @@
       {# Main Container #}
       <div class="column">
         <div class="main-body">
+          <h1>{{ content.main.title }}</h1>
           {{ content.main.body }}
         </div>
 
@@ -30,12 +31,12 @@
   </div>
 </div>
 
-<footer style="display: none">
+<footer style="display:none">
   <h2>Versions du CV spécifiques à un métier</h2>
   <nav>{% for topic in cvTopics %}
-
-    <a href="{{ path_for('cv', {'issue': 'full', 'topic': topic}) }}">{{ topic }}</a>
-    <a href="{{ path_for('cv', {'issue': 'short', 'topic': topic}) }}">{{ topic }} (Short Version)</a>
+    {% set topicContent = contentFactory.getContent(topic) %}
+    <a href="{{ path_for('cv', {'issue': null, 'topic': topic}) | trim('/', 'right') }}">{{ topicContent.main.title }}</a>
+    <a href="{{ path_for('cv', {'issue': 'short', 'topic': topic}) }}">{{ topicContent.main.title }} (Short Version)</a>
   {% endfor %}</nav>
 </footer>
 

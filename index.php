@@ -56,28 +56,29 @@ $container['view'] = function ($container) use ($existingTopics) {
     });
     $view->getEnvironment()->addFilter($stripProtocol);
     $view->getEnvironment()->addGlobal('cvTopics', $existingTopics);
+    $view->getEnvironment()->addGlobal('contentFactory', $container['contentFactory']);
 
     return $view;
 };
 
-$container['content'] = $container->factory(function ($container) {
-    $filter = $container->bodyFilter;
-    $rootDir = $container->rootDir;
-    $content = new CV\ContentManager(CONTENT_PATH($rootDir));
-    $content->setDocumentBodyFilter($filter);
-    // Main data
-    $content->add('main', 'main.md');
-    $content->add('human', '../human.md');
-    $content->add('skills', 'skills.md');
-    // Work XP
-    $content->addDirectory('experience', 'xp');
-    // School
-    $content->addDirectory('formation', 'school');
-    return $content;
-});
-
-$container['bodyFilter'] = null;
-$container['rootDir'] = null;
+$container['contentFactory'] = function ($container) {
+    return new class() {
+        public function getContent(string $rootDir, \CV\DocumentBodyFilter $filter = null)
+        {
+            $content = new CV\ContentManager(CONTENT_PATH($rootDir));
+            $content->setDocumentBodyFilter($filter);
+            // Main data
+            $content->add('main', 'main.md');
+            $content->add('human', '../human.md');
+            $content->add('skills', 'skills.md');
+            // Work XP
+            $content->addDirectory('experience', 'xp');
+            // School
+            $content->addDirectory('formation', 'school');
+            return $content;
+        }
+    };
+};
 
 function willServeCv (Request $request, Response $response, array $args) {
     global $container; // Ugh ... we need controllers now :)
@@ -86,13 +87,9 @@ function willServeCv (Request $request, Response $response, array $args) {
     if ('short' === ($args['issue'] ?? 'full')) {
         $filter->exclude('online');
     }
-    $container['bodyFilter'] = $filter;
-    // Define the content directory
-    $topic = $args['topic'] ?? 'sigweb';
-    $container['rootDir'] = $topic;
-    // Get the component & render
-    $content = $container['content'];
-    return $container->view->render($response, 'index.html', ['content' => $container->content]);
+    $rootDir = $args['topic'] ?? 'sigweb';
+    $content = $container['contentFactory']->getContent($rootDir, $filter);
+    return $container->view->render($response, 'index.html', ['content' => $content]);
 }
 
 $app->get('/', 'willServeCv');
