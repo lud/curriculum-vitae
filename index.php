@@ -36,7 +36,7 @@ $container['view'] = function ($container) {
     // Instantiate and add Slim specific extension
     $basePath = rtrim(str_ireplace('index.php', '', $container->get('request')->getUri()->getBasePath()), '/');
     $view->addExtension(new Slim\Views\TwigExtension($container->get('router'), $basePath));
-    $stripProtocol = new Twig_filter('strip_protocol', function (string $url) {
+    $stripProtocol = new Twig_Filter('strip_protocol', function (string $url) {
         if (0 === strpos($url, 'https://')) {
             return substr($url, 8);
         }
