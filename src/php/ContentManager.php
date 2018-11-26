@@ -32,6 +32,13 @@ class ContentManager {
         }
     }
 
+    public function addDirectory($path, $tags = [])
+    {
+        foreach ($this->findDirFiles($path) as $key => $path) {
+            $this->add($key, $path, $tags);
+        }
+    }
+
     public function tagged($tag) : \Generator
     {
         $keys = $this->tags[$tag] ?? [];
@@ -45,6 +52,59 @@ class ContentManager {
         $this->docBodyFilter = $filter;
     }
 
+    private function findDirFiles($path)
+    {
+        $files = scandir($path, SCANDIR_SORT_ASCENDING);
+        // Remove directories and "hidden files"
+        $files = array_filter($files, function($filename){
+            return false === ($filename[0] === '.' || is_dir($path . DIRECTORY_SEPARATOR . $filename));
+        });
+        // Separate manually and default ordered files
+        $manuallyOrderedFiles = [];
+        $defaultOrderedFiles = [];
+        foreach ($files as $filename) {
+            if (preg_match('/^[0-9]+\./', $filename)) {
+                $manuallyOrderedFiles[] = $filename;
+            } else {
+                $defaultOrderedFiles[] = $filename;
+            }
+        }
+
+        $sortedResult = [];
+        // Treat manually ordered files
+        $dataToSort = [];
+        $maxOrder = -1;
+        foreach ($manuallyOrderedFiles as $filename) {
+            $keyParts = explode('.', $filename);
+            $order = (int) ltrim($keyParts[0], '0');
+            $maxOrder = max($maxOrder, $order);
+            array_pop($keyParts); // Remove extension
+            array_shift($keyParts); // Remove order mark
+            $key = implode('.', $keyParts);
+            $dataToSort[] = compact('key', 'filename', 'order');
+        }
+        // Treat default ordered Files
+        foreach ($defaultOrderedFiles as $filename) {
+            $keyParts = explode('.', $filename);
+            array_pop($keyParts); // Remove extension
+            $order = ++$maxOrder;
+            $key = implode('.', $keyParts);
+            $dataToSort[] = compact('key', 'filename', 'order');
+        }
+        usort($dataToSort, function($a, $b) {
+            return $a['order'] - $b['order'];
+        });
+        // Now we can create our ordered array with simple keys
+        foreach ($dataToSort as $fileinfo) {
+            yield $fileinfo['key'] => $this->joinPath($path, $fileinfo['filename']);
+        }
+    }
+
+    private function joinPath(...$args)
+    {
+        return implode(DIRECTORY_SEPARATOR, $args);
+    }
+
     private function make($key)
     {
         $path = $this->files[$key];
@@ -54,4 +114,5 @@ class ContentManager {
         $doc->setBodyFilter($this->docBodyFilter);
         return $doc;
     }
+
 }

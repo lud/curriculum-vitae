@@ -62,13 +62,9 @@ $container['content'] = function ($container) {
     $content->add('human', CONTENT_FILE('human.md'));
     $content->add('skills', CONTENT_FILE('skills.md'));
     // Work XP
-    $content->add('gfi', CONTENT_FILE('experience/gfi.md'), 'xp');
-    $content->add('toulouseweb', CONTENT_FILE('experience/toulouseweb.md'), 'xp');
-    $content->add('arles', CONTENT_FILE('experience/arles.md'), 'xp');
+    $content->addDirectory(CONTENT_FILE('experience'), 'xp');
     // School
-    $content->add('lpro', CONTENT_FILE('formation/lpro.md'), 'school');
-    $content->add('ut2', CONTENT_FILE('formation/ut2.md'), 'school');
-    $content->add('lycee', CONTENT_FILE('formation/lycee.md'), 'school');
+    $content->addDirectory(CONTENT_FILE('formation'), 'school');
 
     return $content;
 
