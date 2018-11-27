@@ -18,13 +18,7 @@ function CONTENT_PATH($dir) {
     return __DIR__ . "/content/$dir";
 }
 
-$existingTopics = scandir(CONTENT_PATH('.'));
-$existingTopics = array_filter($existingTopics, function($dir){
-    if (!is_dir(CONTENT_PATH($dir)) || '.' === $dir[0]) {
-        return false;
-    }
-    return true;
-});
+$existingTopics = ['sigweb', 'webdev'];
 
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
@@ -74,7 +68,7 @@ $container['contentFactory'] = function ($container) {
             // Work XP
             $content->addDirectory('experience', 'xp');
             // School
-            $content->addDirectory('formation', 'school');
+            $content->addDirectory('../formation', 'school');
             return $content;
         }
     };

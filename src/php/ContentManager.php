@@ -63,7 +63,10 @@ class ContentManager {
 
     private function findDirFiles($path)
     {
-        $files = scandir($this->joinPath($this->rootDir, $path), SCANDIR_SORT_ASCENDING);
+        $files = scandir($this->joinPath($this->rootDir, $path), SCANDIR_SORT_ASCENDING) ?? [];
+        if (false === $files) {
+            return []; // dir not found
+        }
         // Remove directories and "hidden files"
         $files = array_filter($files, function($filename){
             return false === ($filename[0] === '.' || is_dir($path . DIRECTORY_SEPARATOR . $filename));
