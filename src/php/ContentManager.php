@@ -68,8 +68,9 @@ class ContentManager {
             return []; // dir not found
         }
         // Remove directories and "hidden files"
-        $files = array_filter($files, function($filename){
-            return false === ($filename[0] === '.' || is_dir($path . DIRECTORY_SEPARATOR . $filename));
+        $files = array_filter($files, function($filename) use ($path) {
+            $p = $this->joinPath($this->rootDir, $path, $filename);
+            return false === ($filename[0] === '.' || is_dir($p));
         });
         // Separate manually and default ordered files
         $manuallyOrderedFiles = [];
