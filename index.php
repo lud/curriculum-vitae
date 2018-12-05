@@ -24,6 +24,8 @@ $existingTopics = ['sigweb', 'webdev'];
 
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
+use Symfony\Component\Lock\Factory;
+use Symfony\Component\Lock\Store\FlockStore;
 
 
 $app = new \Slim\App(['settings' => [
@@ -121,7 +123,14 @@ function willServePDF (Request $request, Response $response, array $args) {
     // and not saved along HTML.
     // So we call ourselves with HTTP but this requires any multithreaded web
     // server. In dev we use Pheral.
+    // Btw, it still semms not possible to generate multiple PDF concurrently
+    // because one is ok but a concurrent other is 0 bytes. Maybe because
+    // wkhtmltopdf has to connect to an X server, or because of xvfb used to
+    // fake that X server ... So we use a lock to queue PDF generation
     global $container;
+    $lockFactory = new Factory(new FlockStore());
+    $lock = $lockFactory->createLock('pdf-generation');
+    $lock->acquire($blocking = true);
     $args = array_merge($args, ['issue' => 'short']);
     $topic = $args['topic'];
     $content = getRequestContent($request, $args);
@@ -141,8 +150,9 @@ function willServePDF (Request $request, Response $response, array $args) {
     $pdfFile = "$tempnam.pdf";
     rename($tempnam, $pdfFile);
     $cmd = implode(' ', ['xvfb-run', '--server-args="-screen 0, 1024x768x24"', 'wkhtmltopdf', $uri, $pdfFile, '2>&1']);
-    chmod($pdfFile, 0644);
     $cmdResult = exec($cmd, $output, $cmdResultCode);
+    $lock->release();
+    chmod($pdfFile, 0644);
     header("Content-Type: application/pdf");
     // $displayName = str_replace(' ', '', $content->human()->displayName());
     // $publicFilename = "CV-$displayName-$topic.pdf";
