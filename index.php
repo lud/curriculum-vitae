@@ -20,7 +20,8 @@ function CONTENT_PATH($dir) {
     return __DIR__ . "/content/$dir";
 }
 
-$existingTopics = ['sigweb', 'webdev'];
+$existingTopics = ['SigWeb', 'WebDev'];
+define('DEFAULT_TOPIC', 'SigWeb');
 
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
@@ -92,7 +93,7 @@ function getRequestContent(Request $request, array $args) {
     if ('short' === ($args['issue'])) {
         $filter->exclude('online');
     }
-    $rootDir = $args['topic'] ?? 'sigweb';
+    $rootDir = $args['topic'] ?? DEFAULT_TOPIC;
     $container['routeArgs'] = $args;
     $container['queryParams'] = $request->getQueryParams();
     $content = $container['contentFactory']->getContent($rootDir, $filter);
@@ -166,7 +167,7 @@ function willServePDF (Request $request, Response $response, array $args) {
 $app->add(function (Request $request, Response $response, $next) {
     // Internal redirect
     $redirects = [
-        '/' => '/cv/sigweb/full'
+        '/' => '/cv/'.DEFAULT_TOPIC.'/full'
     ];
     $uri = $request->getUri();
     $path = $uri->getPath();
