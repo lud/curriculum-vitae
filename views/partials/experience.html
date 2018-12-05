@@ -2,6 +2,5 @@
 {% for xp in content.tagged('xp') %}
     <h3 class="title data-job-title">{{ xp.jobType }}</h3>
     <h4 class="subtitle data-employer">{{ xp.employer }}, {{ xp.dateRange }}</h4>
-
     {{ xp.body }}
 {% endfor %}

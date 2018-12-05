@@ -5,11 +5,13 @@ namespace CV;
 class DocumentTwigOutput {
 
     private $document;
+    private $key;
     private $docBodyFilter;
 
-    public function __construct(\Spatie\YamlFrontMatter\Document $document)
+    public function __construct(\Spatie\YamlFrontMatter\Document $document, string $key)
     {
         $this->document = $document;
+        $this->key = $key;
     }
 
     public function setBodyFilter(DocumentBodyFilter $filter = null)
@@ -87,6 +89,11 @@ class DocumentTwigOutput {
             $value = json_encode($value, JSON_PRETTY_PRINT);
         }
         return $value;
+    }
+
+    public function key()
+    {
+        return $this->key;
     }
 
 }

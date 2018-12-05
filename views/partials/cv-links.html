@@ -1,0 +1,19 @@
+{% if not queryParams.pdf %}
+<nav>
+{#
+    {% if routeArgs.issue is not same as('full') %}
+        <a class="button" href="{{ path_for('cv', {'issue': 'full', 'topic': routeArgs.topic}) | trim('/', 'right') }}">
+            Full Version
+        </a>
+    {% endif %}
+    {% if routeArgs.issue is not same as('short') %}
+        <a class="button" href="{{ path_for('cv', {'issue': 'short', 'topic': routeArgs.topic }) }}">
+            Short Version
+        </a>
+    {% endif %}
+#}
+    <a class="button is-primary is-outlined" href="{{ path_for('pdf', {'topic': routeArgs.topic, '_topic': routeArgs.topic, 'displayName': content.human.displayName | replace({' ': ''})}) }}">
+        Download PDF
+    </a>
+</nav>
+{% endif %}

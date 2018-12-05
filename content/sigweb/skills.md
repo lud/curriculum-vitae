@@ -1,15 +1,14 @@
 
-### <i class="fas fa-layer-group"></i> SIG
+### <i class="fas fa-layer-group"></i> SIG / SGBD
 
 - ArcGIS Server, Arcgis JsAPI
 - MapGuide, MapGuide OS
 - Mapinfo, QGis
 
-### <i class="fas fa-database"></i> Bases de données
-
 - PostgreSQL, PostGis
 - Oracle, Oracle Spatial
-- MySQL, SQLite
+- MySQL
+- SQLite
 
 ### <i class="fas fa-code"></i> Programmation
 

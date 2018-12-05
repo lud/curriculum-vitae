@@ -123,7 +123,7 @@ class ContentManager {
         $path = $this->files[$key];
         $source = file_get_contents($path);
         $document = \Spatie\YamlFrontMatter\YamlFrontMatter::parse($source);
-        $doc = new DocumentTwigOutput($document);
+        $doc = new DocumentTwigOutput($document, $key);
         $doc->setBodyFilter($this->docBodyFilter);
         return $doc;
     }

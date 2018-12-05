@@ -14,7 +14,6 @@
           <h1>{{ content.main.title }}</h1>
           {{ content.main.body }}
         </div>
-
         <section class="section">
           {% include 'partials/experience.html' %}
         </section>
@@ -25,6 +24,11 @@
       {# Sidebar #}
       <aside class="column is-one-third sidebar">
         {% include 'partials/human.html' %}
+
+        <section class="has-text-centered">
+          {% include 'partials/cv-links.html' %}
+        </section>
+
         {% include 'partials/skills.html' %}
       </aside>
     </div>
@@ -35,7 +39,7 @@
   <h2>Versions du CV spécifiques à un métier</h2>
   <nav>{% for topic in cvTopics %}
     {% set topicContent = contentFactory.getContent(topic) %}
-    <a href="{{ path_for('cv', {'issue': null, 'topic': topic}) | trim('/', 'right') }}">{{ topicContent.main.title }}</a>
+    <a href="{{ path_for('cv', {'issue': 'full', 'topic': topic}) | trim('/', 'right') }}">{{ topicContent.main.title }}</a>
     <a href="{{ path_for('cv', {'issue': 'short', 'topic': topic}) }}">{{ topicContent.main.title }} (Short Version)</a>
   {% endfor %}</nav>
 </footer>
